@@ -3,10 +3,6 @@ import torch.nn.functional as F
 import math
 import numpy as np
 
-# SynodicMonth
-# https://github.com/SynodicMonth/ChebyKAN
-# https://arxiv.org/pdf/2405.07200
-
 class ChebyshevKANLayer(torch.nn.Module):
     def __init__(self, input_dim, output_dim, degree):
         super(ChebyshevKANLayer, self).__init__()
