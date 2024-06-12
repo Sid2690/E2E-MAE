@@ -15,7 +15,7 @@ class ChebyshevKANLayer(torch.nn.Module):
         self.register_buffer("arange", torch.arange(0, degree + 1, 1))
 
     def chebyshev_polynomials(self, x):
-        T = [torch.ones_like(x), x]
+        T = [torch.ones_like(x), 2*x]
         for n in range(2, self.degree + 1):
             T.append(2 * x * T[n - 1] - T[n - 2])
         return torch.stack(T, dim=-1)
